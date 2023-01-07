@@ -7,8 +7,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ReportResult implements Serializable{
-    private int id, trans_id, ammount, bank;
-    private String buyer, seller, cid, buyer_phone, description, tm_id, external_id, bank_id, state;
+    private int id, transId, ammount, bank;
+    private String buyer, seller, cid, buyerPhone, description, tmId, externalId, bankId, state;
     private Boolean send;
     private Date date;
 
@@ -20,18 +20,18 @@ public class ReportResult implements Serializable{
     /**Interno*/
     public ReportResult(JSONObject obj) throws Exception{
         this.id=obj.getInt("id");
-        this.trans_id=obj.getInt("trans_id");
+        this.transId =obj.getInt("trans_id");
         this.ammount=obj.getInt("ammount");
         this.bank=obj.getInt("bank");
 
         this.buyer=obj.getString("buyer");
         this.seller=obj.getString("seller");
         this.cid=obj.getString("cid");
-        this.buyer_phone=obj.getString("buyer_phone");
+        this.buyerPhone =obj.getString("buyer_phone");
         this.description=obj.getString("description");
-        this.tm_id=obj.getString("tm_id");
-        this.external_id=obj.getString("external_id");
-        this.bank_id=obj.getString("bank_id");
+        this.tmId =obj.getString("tm_id");
+        this.externalId =obj.getString("external_id");
+        this.bankId =obj.getString("bank_id");
         this.state=obj.getString("state");
 
         this.send=obj.getBoolean("send");
@@ -48,12 +48,12 @@ public class ReportResult implements Serializable{
         this.id = id;
     }
 
-    public int getTrans_id() {
-        return trans_id;
+    public int getTransId() {
+        return transId;
     }
 
-    public void setTrans_id(int trans_id) {
-        this.trans_id = trans_id;
+    public void setTransId(int transId) {
+        this.transId = transId;
     }
 
     public int getAmmount() {
@@ -96,12 +96,12 @@ public class ReportResult implements Serializable{
         this.cid = cid;
     }
 
-    public String getBuyer_phone() {
-        return buyer_phone;
+    public String getBuyerPhone() {
+        return buyerPhone;
     }
 
-    public void setBuyer_phone(String buyer_phone) {
-        this.buyer_phone = buyer_phone;
+    public void setBuyerPhone(String buyerPhone) {
+        this.buyerPhone = buyerPhone;
     }
 
     public String getDescription() {
@@ -112,28 +112,28 @@ public class ReportResult implements Serializable{
         this.description = description;
     }
 
-    public String getTm_id() {
-        return tm_id;
+    public String getTmId() {
+        return tmId;
     }
 
-    public void setTm_id(String tm_id) {
-        this.tm_id = tm_id;
+    public void setTmId(String tmId) {
+        this.tmId = tmId;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public String getBank_id() {
-        return bank_id;
+    public String getBankId() {
+        return bankId;
     }
 
-    public void setBank_id(String bank_id) {
-        this.bank_id = bank_id;
+    public void setBankId(String bankId) {
+        this.bankId = bankId;
     }
 
     public String getState() {

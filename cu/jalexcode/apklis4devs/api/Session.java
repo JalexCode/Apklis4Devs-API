@@ -273,6 +273,23 @@ public final class Session implements Serializable {
     }
 
     /**
+     * Retorna una aplicacion dado el nombre de su paquete
+     *
+     * @param packageName El nombre del paquete de la aplicacion a encontrar
+     * @return Retorna una aplicacion dado el nombre de su paquete. Retorna null si no se encuentra
+     */
+    public Application getAppByPackage(String packageName) {
+        if (apps != null) {
+            for (Application application:apps){
+                if (application.getPackageName().equals(packageName)){
+                    return application;
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
      * INTERNO
      *
      * @throws Exception Si ocurre un error de IO
@@ -406,6 +423,7 @@ public final class Session implements Serializable {
     public void updateCache() throws Exception {
         _resolveUserInfo();
         _resolveApps();
+        _resolveUserNotifications();
         _resolveCategories();
         _resolveDashboardStats();
     }

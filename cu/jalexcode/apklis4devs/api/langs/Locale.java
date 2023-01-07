@@ -10,7 +10,7 @@ public final class Locale implements Serializable {
 
     static final Properties get(){
         Properties p = new Properties();
-        p.setProperty("this_release_already_exists_for_the_application", "Ya existe esta Version de la aplicacion");
+        p.setProperty("this_release_already_exists_for_the_application", "Ya existe esta Versión de la aplicación");
         //TODO: Completar Lista De Traducciones
         return p;
     }

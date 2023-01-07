@@ -41,10 +41,11 @@ Los métodos que puedes utilizar son los siguientes:
 ArrayList<Application> apps = s.getOwnApps(true);
 // Obtener información personal
 UserInfo userInfo = s.getUserInfo();
+// en proximos PUSH se agregaran mas ejemplos :-)
 ```
 
 ### ¿Este proyecto tiene licencia?
-Si, esta bajo la *Creative Commons Zero v1.0 Universal*, puedes revisarla en: [LICENCIA](https://github.com/karelantonio/Apklis-Admin-Api/blob/main/LICENSE). *Recuerda agregar una linea: "Utilizando el proyecto de codigo abierto Apklis Admin API, disponible en https://github.com/karelantonio/Apklis-Admin-Api"* para que nuestra comunidad crezca y todos puedan dar a conocer este proyecto
+Si, esta bajo la *Creative Commons Zero v1.0 Universal*, puedes revisarla en: [LICENCIA](https://github.com/JalexCode/Apklis4Devs-API/blob/master/LICENSE). *Recuerda agregar la línea: "Utilizando el proyecto de código abierto Apklis4Devs-API, disponible en https://github.com/JalexCode/Apklis4Devs-API"* para que la comunidad de Devs pueda hacer uso de este proyecto, así como acceder a su mantenimiento.
 
 ### Etiquetas:
 [JAVA] [CODIGO ABIRTO] [APKLIS] [APKLIS ADMIN] [API] [REST] [JSON REST]

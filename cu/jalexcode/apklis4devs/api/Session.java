@@ -225,7 +225,7 @@ public final class Session implements Serializable {
                 .build());
         if (resp2.code() == 200) {
             userInfo.setDevInfo(resp2.body().string());
-        }else {
+        } else {
             CommonError.throwEx(resp2);
         }
         // obtener info de Apklis
@@ -370,9 +370,14 @@ public final class Session implements Serializable {
     }
 
     /**
+     * Retorna los datos estadisticos globales de la plataforma
      *
+     * @param resolveIfNot si su valor es true, en caso de que no se hayan obtenido los datos previamente, se procede a solicitarlos.
      */
-    public DashboardStats getDashboardStats() {
+    public DashboardStats getDashboardStats(boolean resolveIfNot) throws Exception {
+        if (dashboardStats == null && resolveIfNot) {
+            _resolveDashboardStats();
+        }
         return dashboardStats;
     }
 
@@ -494,10 +499,10 @@ public final class Session implements Serializable {
     /**
      * Devuelve las ventas en un rango de fecha
      *
-     * @param date1 La fecha limite mayor del rango
-     * @param date2 La fecha limite menor del rango
+     * @param date1       La fecha limite mayor del rango
+     * @param date2       La fecha limite menor del rango
      * @param phoneNumber El numero de telefono del usuario
-     * @param type El tipo de reporte: Constants.TYPE_DAY o Constants.TYPE_MONTH
+     * @param type        El tipo de reporte: Constants.TYPE_DAY o Constants.TYPE_MONTH
      * @return Devuelve la lista de ventas o las pide al servidor si son nullas
      * @throws Exception lanza una excepcion si ocurre un error de IO o si las credenciales son invalidas. NULLABLE
      */
@@ -543,10 +548,10 @@ public final class Session implements Serializable {
     /**
      * Devuelve la lista de ventas con detalles de estas
      *
-     * @param date1 La fecha limite mayor del rango
-     * @param date2 La fecha limite menor del rango
+     * @param date1       La fecha limite mayor del rango
+     * @param date2       La fecha limite menor del rango
      * @param phoneNumber El numero de telefono del usuario
-     * @param limit El limite de reportes a devolver
+     * @param limit       El limite de reportes a devolver
      * @return Devuelve el reporte de ventas o lo pide al servidor si son nullas
      * @throws Exception lanza una excepcion si ocurre un error de IO o si las credenciales son invalidas. NULLABLE
      */

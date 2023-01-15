@@ -62,7 +62,7 @@ public final class Session implements Serializable {
         this(username, password, _static_constructor(username, password));
     }
 
-    Session() {
+    public Session() {
     }
 
     /**
